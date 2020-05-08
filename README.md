@@ -1,3 +1,3 @@
-# cs50 Problem Sets :grinning:
+# cs50 Problem Sets :raised_hands:
 
 #### Readability -> Week 2 - Arrays
