@@ -15,18 +15,26 @@ int main(void)
     float c = calculateWords(sentences);
 
     float L = ((b/c)*100);
-   float S = ((a/c)*100);
+    float S = ((a/c)*100);
 
-   float index = 0.0588 * L - 0.296 * S - 15.8;
+    float index = 0.0588 * L - 0.296 * S - 15.8;
 
-    printf("Grade %.0f", round(index));
+    if(index>=0 && index<= 16) {
+        printf("Grade %.0f\n", round(index));
+    }
+    else if(index < 0) {
+        printf("Before Grade 1\n");
+    }
+    else {
+        printf("Grade 16+\n");
+    }
 
 }
 
 float calculateSentences(string sentence) {
     float k = 0;
     for(int i = 0, n= strlen(sentence); i<n; i++){
-        if(sentence[i] == '.' || sentence[i] == '!'){
+        if(sentence[i] == '.' || sentence[i] == '!' || sentence[i] == '?'){
           k++;
         }
     }
@@ -56,4 +64,6 @@ float k = 0;
     }
     return k;
 }
+
+
 
